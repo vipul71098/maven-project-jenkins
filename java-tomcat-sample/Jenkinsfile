@@ -11,6 +11,13 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
+            stage('Deploy in Staging Environment'){
+            steps{
+                build job: 'Deploy_tomcat_application_to_stagging_ENV'
+
+            }
+
+        }
         }
 
         
